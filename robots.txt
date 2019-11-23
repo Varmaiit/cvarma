@@ -1,0 +1,7 @@
+
+# Enables robots.txt rules for all crawlers
+User-agent: *
+Disallow: /media/
+
+# Sitemap file
+Sitemap: http://www.cvarma.com/sitemap.xml

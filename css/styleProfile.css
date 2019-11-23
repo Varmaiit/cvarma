@@ -1,0 +1,13 @@
+/*body {
+	background-color: green !important;
+}
+*/
+.margin-removal{
+    margin: 0px 0px;
+}
+
+.text-desc {
+	color: #AFAFAF !important;
+    font-weight: 500 !important;
+	/*     color: #AFAFAF; */
+}

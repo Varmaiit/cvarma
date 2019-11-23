@@ -1,0 +1,101 @@
+<!DOCTYPE html>
+<html>
+    <head>
+        <meta name="viewport" content="width=device-width, initial-scale=1.0">
+        <link rel="stylesheet" type="text/css" href="css/bootstrap4beta.min.css">
+        <link rel="stylesheet" type="text/css" href="css/styleBudApp.css">
+        <link href="http://code.ionicframework.com/ionicons/2.0.1/css/ionicons.min.css" rel="stylesheet" type="text/css">
+        <title>My Budgeting App</title>
+    </head>
+    <body>
+        <header>
+            <nav class="navbar navbar-expand-md navbar-dark bg-dark mb-3 text-white w-100">
+                <div class="container">
+                    <a class="h6" href="http://www.cvarma.com/index.html" style="text-decoration:none; color: inherit;">Home</a>
+                    <a class="nav-link h6">My Budgeting App</a>
+                    <ul class="navbar-nav">
+                        <li class="nav-item">
+                            <a class="nav-link h6">Login</a>
+                        </li>
+                    </ul>
+                </div>
+            </nav>
+        </header>
+        <div class="container">
+            <!-- Net Budget section Start -->
+            <div>
+                <div class="col-sm-8 col-md-6 col-lg-6 col-xl-6 mx-auto">
+                    <h3 class="text-center"><em> Net budget for the current month</em></h3>
+                    <div class="text-center"><h3><em><div class="net_budget">+0.00</div></em></h3></div>
+                </div>
+                <div class="col-sm-12 col-md-12 col-lg-12 col-xl-12" id="exp_summary">
+                    <div class="mx-auto px-3 clearfix">
+                        <h3 class="text-center"><em> Income for the current month</em></h3>
+                        <div class="text-center"><h3><em><div class="income_value">+0.00</div></em></h3></div>
+                    </div>
+                    <div class="mx-auto  px-3 clearfix">
+                        <h3 class="text-center"><em> Expenses for the current month</em></h3>
+                        <div class="justify-content-center align-items-center" style="display: flex">
+                            <div class="text-center"><h3><em><div class="expenses_value">-0.00</div></em></h3></div>
+                            <div class="percentage_value px-3 text-right">0%</div>
+
+                        </div>
+                    </div>
+                </div>
+            </div>
+            <!-- Net Budget section End -->
+            <!-- Add Descreption and value section Start -->
+            <div class="add_bar w-100">
+                <div class="col-sm-6 col-md-8 col-lg-8 col-xl-8 mx-auto row clearfix">
+                    <div class="px-3">
+                        <input type="text" class="px-3 add_description" placeholder="Add Description">
+                    </div>
+                    <div class="px-3">
+                        <input type="text" class="px-3 amount_value" placeholder="Value">
+                    </div>
+                    <div class="px-3">
+                        <button class="px-2 inc_add_button" id="inc_add_button" >+</button>
+                        <button class="px-2 exp_sub_button" id="exp_sub_button">-</button>
+                    </div>
+                </div>
+            </div>
+            <!-- Add Descreption and value section End -->
+            <!-- Income and Expenses Sheet  Start -->
+            <div class="inc_exp_container row">
+                <div class="col-sm-4 col-md-6 col-lg-6 col-xl-6 mx-auto">
+                    <h3 class="text-center text-success"><em> Income</em></h3>
+                    <div class="income_list text-left px-3"><h3><em>25000</em></h3></div>
+                    <div class="incomes_list"> </div>
+
+                    <!-- psudo code
+                    <div class="item clearfix" id="income-0">
+                        <div class="item__description">Salary</div>
+                        <div class="right clearfix">
+                            <div class="item__value">+ 2,100.00</div>
+                            <div class="item__delete">
+                                <button class="item__delete--btn">
+                                    <i class="ion-ios-close-outline"></i>
+                                </button>
+                            </div>
+                        </div>
+                    </div>
+
+                     -->
+
+
+
+
+
+                </div>
+                <div class="col-sm-4 col-md-6 col-lg-6 col-xl-6 mx-auto">
+                    <h3 class="text-center text-danger"><em> Expenses</em></h3>
+                    <div class="expense_list text-left px-3"><h3><em>25000</em></h3></div>
+                    <div class="expenses_list"> </div>
+                </div>
+            </div>
+            <!-- Income and Expenses Sheet  End -->
+        </div>
+        <!-- JavaScript Code -->
+        <script src="js/publicBudApp.js"></script>
+    </body>
+</html>
