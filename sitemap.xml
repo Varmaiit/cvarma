@@ -1,26 +1,69 @@
-<?xml version="1.0" encoding="UTF-8"?>
-<urlset
-      xmlns="http://www.sitemaps.org/schemas/sitemap/0.9"
-      xmlns:xsi="http://www.w3.org/2001/XMLSchema-instance"
-      xsi:schemaLocation="http://www.sitemaps.org/schemas/sitemap/0.9
-            http://www.sitemaps.org/schemas/sitemap/0.9/sitemap.xsd">
+<?xml version="1.0" encoding="utf-8"?>
+<urlset xmlns:xsi="http://www.w3.org/2001/XMLSchema-instance"
+xsi:schemaLocation="http://www.sitemaps.org/schemas/sitemap/0.9 http://www.sitemaps.org/schemas/sitemap/0.9/sitemap.xsd"
+xmlns="http://www.sitemaps.org/schemas/sitemap/0.9">
 
 <url>
-  <loc>http://www.cvarma.com/</loc>
-  <lastmod>2017-07-02T07:35:07+00:00</lastmod>
-  <changefreq>weekly</changefreq>
-  <priority>1.0</priority>
+<loc>https://www.cvarma.com/</loc>
+<lastmod>2020-02-24T00:01:14-00:00</lastmod>
+<changefreq>daily</changefreq>
+<priority>0.5</priority>
 </url>
+
 <url>
-  <loc>http://www.cvarma.com/aboutme.html</loc>
-  <lastmod>2017-07-02T07:35:07+00:00</lastmod>
-  <changefreq>weekly</changefreq>
-  <priority>1.0</priority>
+<loc>https://www.cvarma.com/blogs/tags.html</loc>
+<lastmod>2020-02-24T00:01:14-00:00</lastmod>
+<changefreq>daily</changefreq>
+<priority>0.5</priority>
 </url>
+
 <url>
-  <loc>http://www.cvarma.com/profile.html</loc>
-  <lastmod>2017-07-02T07:35:07+00:00</lastmod>
-  <changefreq>weekly</changefreq>
-  <priority>1.0</priority>
+<loc>https://www.cvarma.com/blogs/categories.html</loc>
+<lastmod>2020-02-24T00:01:14-00:00</lastmod>
+<changefreq>daily</changefreq>
+<priority>0.5</priority>
 </url>
+
+<url>
+<loc>https://www.cvarma.com/blogs/authors.html</loc>
+<lastmod>2020-02-24T00:01:14-00:00</lastmod>
+<changefreq>daily</changefreq>
+<priority>0.5</priority>
+</url>
+
+<url>
+<loc>https://www.cvarma.com/blogs/archives.html</loc>
+<lastmod>2020-02-24T00:01:14-00:00</lastmod>
+<changefreq>daily</changefreq>
+<priority>0.5</priority>
+</url>
+
+<url>
+<loc>https://www.cvarma.com/blogs/2020/django-messages-unique-constraint.html</loc>
+<lastmod>2020-02-23T08:25:00+05:30</lastmod>
+<changefreq>daily</changefreq>
+<priority>0.5</priority>
+</url>
+
+<url>
+<loc>https://www.cvarma.com/blogs/category/2020.html</loc>
+<lastmod>2020-02-23T08:25:00+05:53</lastmod>
+<changefreq>daily</changefreq>
+<priority>0.5</priority>
+</url>
+
+<url>
+<loc>https://www.cvarma.com/blogs/tag/django.html</loc>
+<lastmod>2020-02-23T08:25:00+05:53</lastmod>
+<changefreq>daily</changefreq>
+<priority>0.5</priority>
+</url>
+
+<url>
+<loc>https://www.cvarma.com/blogs/author/chaitanya-varma.html</loc>
+<lastmod>2020-02-23T08:25:00+05:53</lastmod>
+<changefreq>daily</changefreq>
+<priority>0.5</priority>
+</url>
+
 </urlset>

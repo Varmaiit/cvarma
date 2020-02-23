@@ -5,3 +5,5 @@ Disallow: /media/
 
 # Sitemap file
 Sitemap: http://www.cvarma.com/sitemap.xml
+
+Sitemap: http://www.cvarma.com/sitemap1.xml

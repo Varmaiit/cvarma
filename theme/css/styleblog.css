@@ -1,0 +1,100 @@
+body{
+    width: 100%;
+    margin: 0;
+}
+.navbar{
+    background-image: linear-gradient(to right, #149DEE, #1462EE);
+}
+.navbar a{
+    font-family: Arial, Helvetica, sans-serif;
+    font-style: italic;
+    color: #e7eae6fa;
+    font-weight: bold;
+    text-decoration: none;
+
+}
+/* .navbar h4{
+    padding-left: 25px; 
+} */
+.navbar-brand-custom h5{
+    font-family: Arial, Helvetica, sans-serif;
+    font-style: italic;
+    font-size: 24px;
+    font-weight: bold;
+}
+.collapse{
+    text-align: right;
+}
+.fa-bars {
+    color: #fff;
+    font-size: 30px !important;
+}
+.tags {
+    padding-left: 20px;
+    font-weight: 700;
+}
+
+
+
+/* ==============================
+            Index
+================================*/
+.list-group-item {
+    border-radius: 2.0rem !important;
+}
+
+
+/* ==============================
+            articles
+================================*/
+
+.related{
+    margin-top: 100px;
+}
+.related h3{
+    font-size: 25px;
+    font-weight: 700;
+}
+.popular-tags{
+    margin-top: 20px;
+}
+.popular-tags h3{
+    font-size: 25px;
+    font-weight: 700;
+}
+.tagcloud li a{
+    text-decoration: none;
+}
+.related ul li a{
+    text-decoration: none;
+}
+
+
+
+/* ==============================
+            Footer
+================================*/
+footer{
+    width: 100%;
+    padding-top: 15px;
+    background-image: linear-gradient(to right, #149DEE, #1462EE);
+    color: #fff;
+}
+.list-unstyled li a{
+    text-decoration: none;
+    color: #fff;
+}
+.list-unstyled li a:hover{
+    color: #fff;
+}
+.footer-title .link a{
+    color: #fff;
+    text-decoration: none;
+}
+.footer-title .link a:hover{
+    color: #fff;
+}
+footer p{
+    margin: 0;
+    padding-bottom: 10px;
+}

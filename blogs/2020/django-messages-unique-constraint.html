@@ -1,0 +1,155 @@
+<!doctype html>
+<html lang="en">
+  <head>
+    <!-- Required meta tags -->
+    <meta charset="utf-8">
+    <meta name="viewport" content="width=device-width, initial-scale=1, shrink-to-fit=no">
+    <link rel="stylesheet" href="https://www.cvarma.com/theme/css/bootstrap4b2.min.css">
+    <link rel="stylesheet" href="https://www.cvarma.com/theme/css/font-awesome.min.css">
+    <link rel="stylesheet" href="https://www.cvarma.com/theme/css/styleblog.css">
+    <meta name="author" content="Chaitanya Varma" />
+    <meta name="keywords" content="Django" />
+    <meta name="description" content="Partial Indexes are a way to create indexing on a partial data set of a table which satisfies the given logic. when these combined with unique indexes it can helps in adding conditional unique constraints on a table. Conditional unique constraints can help in avoiding duplication of records becasue of various concurrent duplicate requests" />
+
+    <title>Conditional Unique Constraints in Postgres using Partial Indexes - Chaitanya Varma's Blog</title>
+  </head>
+  <body>
+    <!-- navbar -->
+    <nav class="navbar navbar-expand-sm fixed-top">
+      <div class="container">
+        <a class="navbar-brand navbar-brand-custom" href="/"><h5>Chaitanya Varma's Blog</h5></a>
+        <button class="navbar-toggler" type="button" data-toggle="collapse" data-target="#navbarColor01" aria-controls="navbarColor01" aria-expanded="false" aria-label="Toggle navigation">
+          <i class="fa fa-bars" aria-hidden="true"></i>      
+        </button>
+
+        <div class="collapse navbar-collapse" id="navbarColor01">
+          <ul class="navbar-nav ml-auto">
+            <li class="nav-item">
+              <a class="nav-link " 
+                href="/blogs/">Blogs</a>
+            </li>
+            <li class="nav-item">
+              <a class="nav-link " 
+                href="/blogs/tags.html">Tags</a>
+            </li>
+          </ul>
+
+          <ul class="navbar-nav">
+            <li class="nav-item">
+              <a class="nav-link " 
+                 href="/aboutme.html">About</a>
+            </li>
+          </ul>
+        </div>
+
+      </div>
+    </nav>
+
+   <div class="py-5">
+
+  
+<div class="container">
+
+  <div class="row">
+    <div class="col-lg-8 mr-auto">   
+
+  <h2 class="mt-4 mb-3">Conditional Unique Constraints in Postgres using Partial Indexes</h2>
+  
+  <div class="text-muted mb-2">
+    <time datetime="2020-02-23 08:25:00+05:30">
+      23 Feb 2020
+    </time>
+    
+     <span class="tags">Tags : </span>
+       <a href="https://www.cvarma.com/blogs/tag/django.html">Django</a>
+  </div>
+  
+
+  <br>
+  <br>
+  
+  <p>Partial Indexes are a way to create indexing on a partial data set of a table which satisfies the given logic.</p>
+<p>Let's get into an exmaple to understand partial indexes in Postgres.</p>
+<p>Let us take an an exmaple of Bus tickets booking platform where we have table called <code>bookings</code> which stores the bookings, to keep things simple let us assume it only contains <code>bus_id</code>, <code>seat_number</code>, <code>date</code>, <code>time</code>, <code>user_id</code>, <code>status</code>, <code>created_at</code>.</p>
+<p>Most of the time users would like to check their upcoming bookings and also as part of Booking platform features, the success bookings are highly retreived.</p>
+<p>So it is always a good idea to index the success booking records, we can have a partial index for success booking as shown below.</p>
+<div class="highlight"><pre><span></span>CREATE INDEX bookings_status_idx ON bookings (status) where status = &#39;SUCCESS&#39;;
+</pre></div>
+
+
+<p>Now comes the important use case where we can avoid duplicate bookings for the same seat in a bus, either from a same user of different user, In this case we cannnot use multi-column unique constraint becasue there might be multiple records in <code>bookings</code> table for a same <code>seat_number</code>, <code>bus_id</code>, <code>date</code> and <code>time</code> in <code>CANCELLED</code> or <code>FAILED</code> status.</p>
+<p>So, Here we need to have conditional unique constraint on <code>status</code> field where <code>status = 'SUCCESS'</code>. we can add conditional unique constraints using unique partial indexes</p>
+<p>Eg: Query to create unique partial indexes for the above mentioned use case.</p>
+<div class="highlight"><pre><span></span>CREATE UNIQUE INDEX bookings_status_idx ON bookings (bus_id, seat_number, date, time) where status = &#39;SUCCESS&#39;;
+</pre></div>
+
+
+<p>These partial indexes become handy for developers to avoid duplication of records for high concurrency tables.</p>
+
+    </div>
+
+
+
+    <!-- Next and prev article -->
+    <div class="related mx-auto">
+
+
+        <div class="popular-tags">
+          <h4>Popular Tags</h4>
+          <ul class="tagcloud" style="list-style-type:none;">
+                <li class="tag-4">
+                    <a href="https://www.cvarma.com/blogs/tag/django.html">
+                    Django
+                    </a>
+                </li>
+          </ul>
+        </div>
+      
+    </div>
+
+  </div>
+
+</div>
+  
+   </div>
+   
+    <footer>
+      <div class="container">
+        <div class="row">
+          <div class="col-xl-8 col-md-8 mr-auto py-1">
+            <div class="footer-title">
+            <h4>Chaitanya Varma' Blog</h4>
+            <div class="link">
+              <a href="https://www.cvarma.com/blogs/">blog.cvarma.com</a>
+            </div>
+          </div>
+          </div>
+          <div class="col-xl-2 col-md-2">
+            <h4>Author</h4>
+              <ul class="list-unstyled my-list-style">
+                <li><a href="https://www.linkedin.com/in/chaitanyavarmapericherla94/">Linkedin</a></li>
+        </ul>
+      </div>
+      
+      <div>
+        <div class="col-xl-2 col-md-2">
+          <h4>Links</h4>
+          <ul class="list-unstyled my-list-style">
+            <li><a href="https://cvarma.com/">cvarma</a></li>
+            <li><a href="https://www.linkedin.com/in/chaitanyavarmapericherla94/">Linkedin</a></li>
+            <li><a href="https://www.cvarma.com/profile.html">Resume</a></li>
+            <li><a href="https://cvarma.com/blogs/">Blogs</a></li>
+          </ul>
+        </div>
+      </div>
+
+      </div>
+    <p class=align-text-bottom>Copy rights © 2019-2020 All Rights reserved</p>
+    </div>
+    </footer>
+    <!-- Optional JavaScript -->
+    <!-- jQuery first, then Bootstrap Bundle JS -->	
+    <script src="https://www.cvarma.com/theme/js/jquery.min.js"></script>
+    <script src="https://www.cvarma.com/theme/js/bootstrap.bundle.min.js"></script>
+  </body>
+</html>
