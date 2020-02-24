@@ -5,65 +5,65 @@ xmlns="http://www.sitemaps.org/schemas/sitemap/0.9">
 
 <url>
 <loc>https://www.cvarma.com/</loc>
-<lastmod>2020-02-24T00:01:14-00:00</lastmod>
+<lastmod>2020-02-24T00:14:48-00:00</lastmod>
 <changefreq>daily</changefreq>
-<priority>0.5</priority>
+<priority>1.0</priority>
 </url>
 
 <url>
 <loc>https://www.cvarma.com/blogs/tags.html</loc>
-<lastmod>2020-02-24T00:01:14-00:00</lastmod>
+<lastmod>2020-02-24T00:14:48-00:00</lastmod>
 <changefreq>daily</changefreq>
-<priority>0.5</priority>
+<priority>1.0</priority>
 </url>
 
 <url>
 <loc>https://www.cvarma.com/blogs/categories.html</loc>
-<lastmod>2020-02-24T00:01:14-00:00</lastmod>
+<lastmod>2020-02-24T00:14:48-00:00</lastmod>
 <changefreq>daily</changefreq>
-<priority>0.5</priority>
+<priority>1.0</priority>
 </url>
 
 <url>
 <loc>https://www.cvarma.com/blogs/authors.html</loc>
-<lastmod>2020-02-24T00:01:14-00:00</lastmod>
+<lastmod>2020-02-24T00:14:48-00:00</lastmod>
 <changefreq>daily</changefreq>
-<priority>0.5</priority>
+<priority>1.0</priority>
 </url>
 
 <url>
 <loc>https://www.cvarma.com/blogs/archives.html</loc>
-<lastmod>2020-02-24T00:01:14-00:00</lastmod>
+<lastmod>2020-02-24T00:14:48-00:00</lastmod>
 <changefreq>daily</changefreq>
-<priority>0.5</priority>
+<priority>1.0</priority>
 </url>
 
 <url>
 <loc>https://www.cvarma.com/blogs/2020/django-messages-unique-constraint.html</loc>
 <lastmod>2020-02-23T08:25:00+05:30</lastmod>
 <changefreq>daily</changefreq>
-<priority>0.5</priority>
+<priority>1.0</priority>
 </url>
 
 <url>
 <loc>https://www.cvarma.com/blogs/category/2020.html</loc>
 <lastmod>2020-02-23T08:25:00+05:53</lastmod>
 <changefreq>daily</changefreq>
-<priority>0.5</priority>
+<priority>1.0</priority>
 </url>
 
 <url>
 <loc>https://www.cvarma.com/blogs/tag/django.html</loc>
 <lastmod>2020-02-23T08:25:00+05:53</lastmod>
 <changefreq>daily</changefreq>
-<priority>0.5</priority>
+<priority>1.0</priority>
 </url>
 
 <url>
 <loc>https://www.cvarma.com/blogs/author/chaitanya-varma.html</loc>
 <lastmod>2020-02-23T08:25:00+05:53</lastmod>
 <changefreq>daily</changefreq>
-<priority>0.5</priority>
+<priority>1.0</priority>
 </url>
 
 </urlset>
