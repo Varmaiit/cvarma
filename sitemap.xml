@@ -4,63 +4,63 @@ xsi:schemaLocation="http://www.sitemaps.org/schemas/sitemap/0.9 http://www.sitem
 xmlns="http://www.sitemaps.org/schemas/sitemap/0.9">
 
 <url>
-<loc>https://www.cvarma.com/</loc>
-<lastmod>2020-02-24T00:14:48-00:00</lastmod>
+<loc>https://cvarma.com/</loc>
+<lastmod>2020-02-24T13:35:45-00:00</lastmod>
 <changefreq>daily</changefreq>
 <priority>1.0</priority>
 </url>
 
 <url>
-<loc>https://www.cvarma.com/blogs/tags.html</loc>
-<lastmod>2020-02-24T00:14:48-00:00</lastmod>
+<loc>https://cvarma.com/blogs/tags.html</loc>
+<lastmod>2020-02-24T13:35:45-00:00</lastmod>
 <changefreq>daily</changefreq>
 <priority>1.0</priority>
 </url>
 
 <url>
-<loc>https://www.cvarma.com/blogs/categories.html</loc>
-<lastmod>2020-02-24T00:14:48-00:00</lastmod>
+<loc>https://cvarma.com/blogs/categories.html</loc>
+<lastmod>2020-02-24T13:35:45-00:00</lastmod>
 <changefreq>daily</changefreq>
 <priority>1.0</priority>
 </url>
 
 <url>
-<loc>https://www.cvarma.com/blogs/authors.html</loc>
-<lastmod>2020-02-24T00:14:48-00:00</lastmod>
+<loc>https://cvarma.com/blogs/authors.html</loc>
+<lastmod>2020-02-24T13:35:45-00:00</lastmod>
 <changefreq>daily</changefreq>
 <priority>1.0</priority>
 </url>
 
 <url>
-<loc>https://www.cvarma.com/blogs/archives.html</loc>
-<lastmod>2020-02-24T00:14:48-00:00</lastmod>
+<loc>https://cvarma.com/blogs/archives.html</loc>
+<lastmod>2020-02-24T13:35:45-00:00</lastmod>
 <changefreq>daily</changefreq>
 <priority>1.0</priority>
 </url>
 
 <url>
-<loc>https://www.cvarma.com/blogs/2020/django-messages-unique-constraint.html</loc>
+<loc>https://cvarma.com/blogs/2020/django-messages-unique-constraint.html</loc>
 <lastmod>2020-02-23T08:25:00+05:30</lastmod>
 <changefreq>daily</changefreq>
 <priority>1.0</priority>
 </url>
 
 <url>
-<loc>https://www.cvarma.com/blogs/category/2020.html</loc>
+<loc>https://cvarma.com/blogs/category/2020.html</loc>
 <lastmod>2020-02-23T08:25:00+05:53</lastmod>
 <changefreq>daily</changefreq>
 <priority>1.0</priority>
 </url>
 
 <url>
-<loc>https://www.cvarma.com/blogs/tag/django.html</loc>
+<loc>https://cvarma.com/blogs/tag/postgres.html</loc>
 <lastmod>2020-02-23T08:25:00+05:53</lastmod>
 <changefreq>daily</changefreq>
 <priority>1.0</priority>
 </url>
 
 <url>
-<loc>https://www.cvarma.com/blogs/author/chaitanya-varma.html</loc>
+<loc>https://cvarma.com/blogs/author/chaitanya-varma.html</loc>
 <lastmod>2020-02-23T08:25:00+05:53</lastmod>
 <changefreq>daily</changefreq>
 <priority>1.0</priority>
