@@ -8,10 +8,10 @@
     <link rel="stylesheet" href="https://cvarma.com/theme/css/font-awesome.min.css">
     <link rel="stylesheet" href="https://cvarma.com/theme/css/styleblog.css">
     <meta name="author" content="Chaitanya Varma" />
-    <meta name="keywords" content="Python" />
-    <meta name="description" content="Some useful python tips and tricks which will save the day of Software developer, Like running a long running script in the background, but still monitoring its progress in realtime." />
+    <meta name="keywords" content="Iphone,Ubuntu" />
+    <meta name="description" content="Best way to backup Iphone photos to Ubuntu without itunes, this is the easiest way to backup photos without any data loss. It is suggested to go with this approach rather than backing up on an Windows Machine." />
 
-    <title>Python Tricks useful in day to day job of a developer - Chaitanya Varma's Blog</title>
+    <title>Best way to backup photos from Iphone to Ubuntu - Chaitanya Varma's Blog</title>
   </head>
   <body>
     <!-- navbar -->
@@ -53,35 +53,45 @@
   <div class="row">
     <div class="col-lg-8 mr-auto">   
 
-  <h2 class="mt-4 mb-3">Python Tricks useful in day to day job of a developer</h2>
+  <h2 class="mt-4 mb-3">Best way to backup photos from Iphone to Ubuntu</h2>
   
   <div class="text-muted mb-2">
-    <time datetime="2022-06-23 08:25:00+05:30">
-      23 Jun 2022
+    <time datetime="2022-08-06 08:25:00+05:30">
+      06 Aug 2022
     </time>
     
      <span class="tags">Tags : </span>
-       <a href="https://cvarma.com/blogs/tag/python.html">Python</a>
+       <a href="https://cvarma.com/blogs/tag/iphone.html">Iphone</a>
+/       <a href="https://cvarma.com/blogs/tag/ubuntu.html">Ubuntu</a>
   </div>
   
 
   <br>
   <br>
   
-  <p>Partial Indexes are a way to create indexing on a partial data set of a table which satisfies the given logic.</p>
-<p>Let's start with a First Tip</p>
+  <p>Best way to backup photos on Iphone to Ubuntu, also it is observed that it is much more faster than any other process</p>
+<p>Steps to backup photos from Iphone</p>
 <ol>
-<li>
-<p>Running a long running script in the background, but still tracking its progress in realtime.</p>
-<ul>
-<li>
-<p>Setting up to run the script in the background using nohup and logging the output into a output file.<br />
-<code>nohup python3 -u sample_script.py &gt; script_output.log &amp;</code></p>
+<li>Need to install ifuse library<ul>
+<li>command to install ifuse</li>
+<li><code>sudo apt install ifuse</code></li>
+</ul>
 </li>
-<li>
-<p>Monitoring the output in the realtime using tail.<br />
-<code>tail -f script_output.log</code></p>
+<li>Create a directory where ever you prefer, for example directory named iphone in home<ul>
+<li><code>mkdir ~/iphone</code></li>
+</ul>
 </li>
+<li>Mount the Iphone to this iphone directory<ul>
+<li>command to mount Iphone </li>
+<li><code>ifuse ~/iphone</code></li>
+<li>Navigate to the folder and one can see following directories in it
+<img alt="IPhoneMountedDirectory" src="https://cvarma.com/blogs/2022/images/iphone_mount.png"></li>
+</ul>
+</li>
+<li>Open the DCIM directory, and you will find all your photos segrageted into folders</li>
+<li>Once you copy them to your ubuntu machine, unmount the Iphone<ul>
+<li>command to unmount</li>
+<li><code>fusermount -u ~/iphone</code></li>
 </ul>
 </li>
 </ol>
@@ -96,8 +106,8 @@
           <h4>Releted</h4>      
           <ul style="list-style-type:none;">
                 <li>
-                    <a href="https://cvarma.com/blogs/2022/photos-backup-iphone-ubuntu.html">
-                        Best way to backup photos from Iphone to Ubuntu
+                    <a href="https://cvarma.com/blogs/2022/python-tricks-for-developer.html">
+                        Python Tricks useful in day to day job of a developer
                     </a>
                 </li>
             </ul>
