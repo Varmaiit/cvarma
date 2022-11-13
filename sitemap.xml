@@ -5,35 +5,42 @@ xmlns="http://www.sitemaps.org/schemas/sitemap/0.9">
 
 <url>
 <loc>https://cvarma.com/</loc>
-<lastmod>2022-08-06T21:09:45-00:00</lastmod>
+<lastmod>2022-11-13T21:34:10-00:00</lastmod>
 <changefreq>daily</changefreq>
 <priority>1.0</priority>
 </url>
 
 <url>
 <loc>https://cvarma.com/blogs/tags.html</loc>
-<lastmod>2022-08-06T21:09:45-00:00</lastmod>
+<lastmod>2022-11-13T21:34:10-00:00</lastmod>
 <changefreq>daily</changefreq>
 <priority>1.0</priority>
 </url>
 
 <url>
 <loc>https://cvarma.com/blogs/categories.html</loc>
-<lastmod>2022-08-06T21:09:45-00:00</lastmod>
+<lastmod>2022-11-13T21:34:10-00:00</lastmod>
 <changefreq>daily</changefreq>
 <priority>1.0</priority>
 </url>
 
 <url>
 <loc>https://cvarma.com/blogs/authors.html</loc>
-<lastmod>2022-08-06T21:09:45-00:00</lastmod>
+<lastmod>2022-11-13T21:34:10-00:00</lastmod>
 <changefreq>daily</changefreq>
 <priority>1.0</priority>
 </url>
 
 <url>
 <loc>https://cvarma.com/blogs/archives.html</loc>
-<lastmod>2022-08-06T21:09:45-00:00</lastmod>
+<lastmod>2022-11-13T21:34:10-00:00</lastmod>
+<changefreq>daily</changefreq>
+<priority>1.0</priority>
+</url>
+
+<url>
+<loc>https://cvarma.com/blogs/2022/frequently-used-postgres-commands.html</loc>
+<lastmod>2022-11-13T20:25:00+05:30</lastmod>
 <changefreq>daily</changefreq>
 <priority>1.0</priority>
 </url>
@@ -68,7 +75,14 @@ xmlns="http://www.sitemaps.org/schemas/sitemap/0.9">
 
 <url>
 <loc>https://cvarma.com/blogs/category/2022.html</loc>
-<lastmod>2022-08-06T08:25:00+05:53</lastmod>
+<lastmod>2022-11-13T20:25:00+05:53</lastmod>
+<changefreq>daily</changefreq>
+<priority>1.0</priority>
+</url>
+
+<url>
+<loc>https://cvarma.com/blogs/tag/postgres.html</loc>
+<lastmod>2022-11-13T20:25:00+05:53</lastmod>
 <changefreq>daily</changefreq>
 <priority>1.0</priority>
 </url>
@@ -95,15 +109,8 @@ xmlns="http://www.sitemaps.org/schemas/sitemap/0.9">
 </url>
 
 <url>
-<loc>https://cvarma.com/blogs/tag/postgres.html</loc>
-<lastmod>2020-02-23T08:25:00+05:53</lastmod>
-<changefreq>daily</changefreq>
-<priority>1.0</priority>
-</url>
-
-<url>
 <loc>https://cvarma.com/blogs/author/chaitanya-varma.html</loc>
-<lastmod>2022-08-06T08:25:00+05:53</lastmod>
+<lastmod>2022-11-13T20:25:00+05:53</lastmod>
 <changefreq>daily</changefreq>
 <priority>1.0</priority>
 </url>

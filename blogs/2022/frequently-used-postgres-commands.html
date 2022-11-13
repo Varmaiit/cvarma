@@ -9,9 +9,9 @@
     <link rel="stylesheet" href="https://cvarma.com/theme/css/styleblog.css">
     <meta name="author" content="Chaitanya Varma" />
     <meta name="keywords" content="Postgres" />
-    <meta name="description" content="Partial Indexes are a way to create indexing on a partial data set of a table which satisfies the given logic. when these combined with unique indexes it can helps in adding conditional unique constraints on a table. Conditional unique constraints can help in avoiding duplication of records becasue of various concurrent duplicate requests" />
+    <meta name="description" content="Frequently used postgres commands used for, like setting up the database or restoring the database." />
 
-    <title>Conditional Unique Constraints in Postgres using Partial Indexes - Chaitanya Varma's Blog</title>
+    <title>Frequently used Postgres commands - Chaitanya Varma's Blog</title>
   </head>
   <body>
     <!-- navbar -->
@@ -53,11 +53,11 @@
   <div class="row">
     <div class="col-lg-8 mr-auto">   
 
-  <h2 class="mt-4 mb-3">Conditional Unique Constraints in Postgres using Partial Indexes</h2>
+  <h2 class="mt-4 mb-3">Frequently used Postgres commands</h2>
   
   <div class="text-muted mb-2">
-    <time datetime="2020-02-23 08:25:00+05:30">
-      23 Feb 2020
+    <time datetime="2022-11-13 20:25:00+05:30">
+      13 Nov 2022
     </time>
     
      <span class="tags">Tags : </span>
@@ -68,23 +68,44 @@
   <br>
   <br>
   
-  <p>Partial Indexes are a way to create indexing on a partial data set of a table which satisfies the given logic.</p>
-<p>Let's get into an exmaple to understand partial indexes in Postgres.</p>
-<p>Let us take an an exmaple of Bus tickets booking platform where we have table called <code>bookings</code> which stores the bookings, to keep things simple let us assume it only contains <code>bus_id</code>, <code>seat_number</code>, <code>date</code>, <code>time</code>, <code>user_id</code>, <code>status</code>, <code>created_at</code>.</p>
-<p>Most of the time users would like to check their upcoming bookings and also as part of Booking platform features, the success bookings are highly retreived.</p>
-<p>So it is always a good idea to index the success booking records, we can have a partial index for success booking as shown below.</p>
-<div class="highlight"><pre><span></span>CREATE INDEX bookings_status_idx ON bookings (status) where status = &#39;SUCCESS&#39;;
-</pre></div>
-
-
-<p>Now comes the important use case where we can avoid duplicate bookings for the same seat in a bus, either from a same user of different user, In this case we cannnot use multi-column unique constraint becasue there might be multiple records in <code>bookings</code> table for a same <code>seat_number</code>, <code>bus_id</code>, <code>date</code> and <code>time</code> in <code>CANCELLED</code> or <code>FAILED</code> status.</p>
-<p>So, Here we need to have conditional unique constraint on <code>status</code> field where <code>status = 'SUCCESS'</code>. we can add conditional unique constraints using unique partial indexes</p>
-<p>Eg: Query to create unique partial indexes for the above mentioned use case.</p>
-<div class="highlight"><pre><span></span>CREATE UNIQUE INDEX bookings_status_idx ON bookings (bus_id, seat_number, date, time) where status = &#39;SUCCESS&#39;;
-</pre></div>
-
-
-<p>These partial indexes become handy for developers to avoid duplication of records for high concurrency tables.</p>
+  <p>Some of the common postgres related commands</p>
+<ol>
+<li>
+<p>Logging into local Postgres server</p>
+<ul>
+<li><code>sudo psql -U &lt;username&gt;</code><br />
+Eg: <code>sudo psql -U postgres</code></li>
+</ul>
+</li>
+<li>
+<p>Creating a new database. (Note: following command need to run after #1)</p>
+<ul>
+<li><code>create database &lt;db_name&gt;;</code><br />
+Eg: <code>create database test_db;</code></li>
+</ul>
+</li>
+<li>
+<p>Dropping a database. (Note: following command need to run after #1)</p>
+<ul>
+<li><code>drop database &lt;db_name&gt;;</code><br />
+Eg: <code>drop database test_db;</code></li>
+</ul>
+</li>
+<li>
+<p>Take complete backup dump of a database.</p>
+<ul>
+<li><code>pg_dump --no-owner -h &lt;host_ip/endpoint&gt; -p &lt;port&gt; -U &lt;username&gt; &lt;db_name&gt; &gt; &lt;file_path&gt;</code><br />
+Eg: <code>pg_dump --no-owner -h 00.00.00.00 -p 5432 -U postgres uat_db &gt; test_dump.sql</code></li>
+</ul>
+</li>
+<li>
+<p>Restoring the dump to an existing new database in local.</p>
+<ul>
+<li><code>sudo psql -U &lt;username&gt; -d &lt;db_name&gt; &lt; &lt;file_path&gt;</code><br />
+Eg: <code>sudo psql -U postgres -d &lt;test_db&gt; &lt; test_dump.sql</code></li>
+</ul>
+</li>
+</ol>
 
     </div>
 
@@ -93,6 +114,14 @@
     <!-- Next and prev article -->
     <div class="related mx-auto">
 
+          <h4>Releted</h4>      
+          <ul style="list-style-type:none;">
+                <li>
+                    <a href="https://cvarma.com/blogs/2022/photos-backup-iphone-ubuntu.html">
+                        Best way to backup photos from Iphone to Ubuntu
+                    </a>
+                </li>
+            </ul>
 
         <div class="popular-tags">
           <h4>Popular Tags</h4>
