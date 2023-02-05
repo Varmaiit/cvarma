@@ -73,15 +73,15 @@
 <p>Let us take an an exmaple of Bus tickets booking platform where we have table called <code>bookings</code> which stores the bookings, to keep things simple let us assume it only contains <code>bus_id</code>, <code>seat_number</code>, <code>date</code>, <code>time</code>, <code>user_id</code>, <code>status</code>, <code>created_at</code>.</p>
 <p>Most of the time users would like to check their upcoming bookings and also as part of Booking platform features, the success bookings are highly retreived.</p>
 <p>So it is always a good idea to index the success booking records, we can have a partial index for success booking as shown below.</p>
-<div class="highlight"><pre><span></span>CREATE INDEX bookings_status_idx ON bookings (status) where status = &#39;SUCCESS&#39;;
-</pre></div>
+<div class="highlight"><table class="highlighttable"><tr><td class="linenos"><div class="linenodiv"><pre><span class="normal">1</span></pre></div></td><td class="code"><div><pre><span></span>CREATE INDEX bookings_status_idx ON bookings (status) where status = &#39;SUCCESS&#39;;
+</pre></div></td></tr></table></div>
 
 
 <p>Now comes the important use case where we can avoid duplicate bookings for the same seat in a bus, either from a same user of different user, In this case we cannnot use multi-column unique constraint becasue there might be multiple records in <code>bookings</code> table for a same <code>seat_number</code>, <code>bus_id</code>, <code>date</code> and <code>time</code> in <code>CANCELLED</code> or <code>FAILED</code> status.</p>
 <p>So, Here we need to have conditional unique constraint on <code>status</code> field where <code>status = 'SUCCESS'</code>. we can add conditional unique constraints using unique partial indexes</p>
 <p>Eg: Query to create unique partial indexes for the above mentioned use case.</p>
-<div class="highlight"><pre><span></span>CREATE UNIQUE INDEX bookings_status_idx ON bookings (bus_id, seat_number, date, time) where status = &#39;SUCCESS&#39;;
-</pre></div>
+<div class="highlight"><table class="highlighttable"><tr><td class="linenos"><div class="linenodiv"><pre><span class="normal">1</span></pre></div></td><td class="code"><div><pre><span></span>CREATE UNIQUE INDEX bookings_status_idx ON bookings (bus_id, seat_number, date, time) where status = &#39;SUCCESS&#39;;
+</pre></div></td></tr></table></div>
 
 
 <p>These partial indexes become handy for developers to avoid duplication of records for high concurrency tables.</p>
@@ -103,13 +103,13 @@
                     </a>
                 </li>
                 <li class="tag-4">
-                    <a href="https://cvarma.com/blogs/tag/ubuntu.html">
-                    Ubuntu
+                    <a href="https://cvarma.com/blogs/tag/python.html">
+                    Python
                     </a>
                 </li>
                 <li class="tag-4">
-                    <a href="https://cvarma.com/blogs/tag/python.html">
-                    Python
+                    <a href="https://cvarma.com/blogs/tag/ubuntu.html">
+                    Ubuntu
                     </a>
                 </li>
                 <li class="tag-4">
@@ -169,7 +169,7 @@
       </div>
 
       </div>
-    <p class=align-text-bottom>Copy rights © 2019-2022 All Rights reserved</p>
+    <p class=align-text-bottom>Copy rights © 2019-2023 All Rights reserved</p>
     </div>
     </footer>
     <!-- Optional JavaScript -->

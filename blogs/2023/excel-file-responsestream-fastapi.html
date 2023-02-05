@@ -74,45 +74,46 @@
 <ol>
 <li>
 <p>Writing data to an excel stream from dataframe</p>
-<ul>
-<li><code>from io import BytesIO
-stream = BytesIO()
-df.to_excel(stream, index=False, engine="openpyxl") # Note: need to install openpyxl</code></li>
-</ul>
+<p><code>from io import BytesIO</code> </p>
+<p><code>stream = BytesIO()</code><br/>
+<code>df.to_excel(stream, index=False, engine="openpyxl") # Note: need to install openpyxl</code></p>
 </li>
 <li>
 <p>Return a Streaming Response Object from FastAPI responses module</p>
-<ul>
-<li><code>from fastapi.responses import StreamingResponse
-response = StreamingResponse(
-iter([stream.getvalue()]), 
-media_type="application/vnd.openxmlformats-officedocument.spreadsheetml.sheet",
-headers={
-    'Content-Disposition': 'attachment;filename=sample_filename.xlsx',
-    'Access-Control-Expose-Headers': 'Content-Disposition' #this is optional
-})
-return response</code></li>
-</ul>
+<p>```<br>
+from fastapi.responses import StreamingResponse</p>
+<p>response = StreamingResponse(
+        iter([stream.getvalue()]), 
+        media_type="application/vnd.openxmlformats-officedocument.spreadsheetml.sheet",
+        headers = {
+        'Content-Disposition': 'attachment;filename=sample_filename.xlsx',<br/>
+        'Access-Control-Expose-Headers': 'Content-Disposition' #this is optional<br/> 
+})  <br>
+return response <br>
+```</p>
 </li>
 </ol>
-<p>Returning an csv file through Streaming Response
-1. Writing data to an csv stream from dataframe
-    - 
-    <code>from io import StringIO
-    stream = StringIO()
-    df.to_csv(stream, index=False)</code></p>
+<p>Returning an csv file through Streaming Response</p>
 <ol>
-<li>Return a Streaming Response Object from FastAPI responses module<ul>
-<li><code>from fastapi.responses import StreamingResponse
-response = StreamingResponse(
-iter([stream.getvalue()]), 
-media_type="text/csv",
-headers={
-    'Content-Disposition': 'attachment;filename=sample_filename.csv',
-    'Access-Control-Expose-Headers': 'Content-Disposition' # this is optional
-})
-return response</code></li>
-</ul>
+<li>
+<p>Writing data to an csv stream from dataframe</p>
+<p><code>from io import StringIO</code> </p>
+<p><code>stream = StringIO()</code><br/>
+<code>df.to_csv(stream, index=False)</code></p>
+</li>
+<li>
+<p>Return a Streaming Response Object from FastAPI responses module</p>
+<p>```<br>
+from fastapi.responses import StreamingResponse</p>
+<p>response = StreamingResponse( <br>
+    iter([stream.getvalue()]), 
+    media_type="text/csv", <br>
+    headers={ <br>
+        'Content-Disposition': 'attachment;filename=sample_filename.csv', 
+        'Access-Control-Expose-Headers': 'Content-Disposition' # this is optional <br>
+    }) <br>
+return response
+```   </p>
 </li>
 </ol>
 
@@ -133,13 +134,13 @@ return response</code></li>
                     </a>
                 </li>
                 <li class="tag-4">
-                    <a href="https://cvarma.com/blogs/tag/ubuntu.html">
-                    Ubuntu
+                    <a href="https://cvarma.com/blogs/tag/python.html">
+                    Python
                     </a>
                 </li>
                 <li class="tag-4">
-                    <a href="https://cvarma.com/blogs/tag/python.html">
-                    Python
+                    <a href="https://cvarma.com/blogs/tag/ubuntu.html">
+                    Ubuntu
                     </a>
                 </li>
                 <li class="tag-4">
@@ -199,7 +200,7 @@ return response</code></li>
       </div>
 
       </div>
-    <p class=align-text-bottom>Copy rights © 2019-2022 All Rights reserved</p>
+    <p class=align-text-bottom>Copy rights © 2019-2023 All Rights reserved</p>
     </div>
     </footer>
     <!-- Optional JavaScript -->
