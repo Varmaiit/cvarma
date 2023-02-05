@@ -8,10 +8,10 @@
     <link rel="stylesheet" href="https://cvarma.com/theme/css/font-awesome.min.css">
     <link rel="stylesheet" href="https://cvarma.com/theme/css/styleblog.css">
     <meta name="author" content="Chaitanya Varma" />
-    <meta name="keywords" content="Iphone,Ubuntu" />
-    <meta name="description" content="Best way to backup Iphone photos to Ubuntu without itunes, this is the easiest way to backup photos without any data loss. It is suggested to go with this approach rather than backing up on an Windows Machine." />
+    <meta name="keywords" content="FastAPI,Pandas" />
+    <meta name="description" content="Code base to return excel/csv file using Streaming Response in FastAPI" />
 
-    <title>Best way to backup photos from Iphone to Ubuntu - Chaitanya Varma's Blog</title>
+    <title>Return Excel/CSV File as a Response Stream FastAPI - Chaitanya Varma's Blog</title>
   </head>
   <body>
     <!-- navbar -->
@@ -53,45 +53,65 @@
   <div class="row">
     <div class="col-lg-8 mr-auto">   
 
-  <h2 class="mt-4 mb-3">Best way to backup photos from Iphone to Ubuntu</h2>
+  <h2 class="mt-4 mb-3">Return Excel/CSV File as a Response Stream FastAPI</h2>
   
   <div class="text-muted mb-2">
-    <time datetime="2022-08-06 08:25:00+05:30">
-      06 Aug 2022
+    <time datetime="2023-05-02 20:25:00+05:30">
+      02 May 2023
     </time>
     
      <span class="tags">Tags : </span>
-       <a href="https://cvarma.com/blogs/tag/iphone.html">Iphone</a>
-/       <a href="https://cvarma.com/blogs/tag/ubuntu.html">Ubuntu</a>
+       <a href="https://cvarma.com/blogs/tag/fastapi.html">FastAPI</a>
+/       <a href="https://cvarma.com/blogs/tag/pandas.html">Pandas</a>
   </div>
   
 
   <br>
   <br>
   
-  <p>Best way to backup photos on Iphone to Ubuntu, also it is observed that it is much more faster than any other process</p>
-<p>Steps to backup photos from Iphone</p>
+  <p>Code base to return excel/csv file using Streaming Response in FastAPI</p>
+<p>Returning an excel file through Streaming Response</p>
 <ol>
-<li>Need to install ifuse library<ul>
-<li>command to install ifuse</li>
-<li><code>sudo apt install ifuse</code></li>
+<li>
+<p>Writing data to an excel stream from dataframe</p>
+<ul>
+<li><code>from io import BytesIO
+stream = BytesIO()
+df.to_excel(stream, index=False, engine="openpyxl") # Note: need to install openpyxl</code></li>
 </ul>
 </li>
-<li>Create a directory where ever you prefer, for example directory named iphone in home<ul>
-<li><code>mkdir ~/iphone</code></li>
+<li>
+<p>Return a Streaming Response Object from FastAPI responses module</p>
+<ul>
+<li><code>from fastapi.responses import StreamingResponse
+response = StreamingResponse(
+iter([stream.getvalue()]), 
+media_type="application/vnd.openxmlformats-officedocument.spreadsheetml.sheet",
+headers={
+    'Content-Disposition': 'attachment;filename=sample_filename.xlsx',
+    'Access-Control-Expose-Headers': 'Content-Disposition' #this is optional
+})
+return response</code></li>
 </ul>
 </li>
-<li>Mount the Iphone to this iphone directory<ul>
-<li>command to mount Iphone </li>
-<li><code>ifuse ~/iphone</code></li>
-<li>Navigate to the folder and one can see following directories in it
-<img alt="IPhoneMountedDirectory" src="https://cvarma.com/blogs/2022/images/iphone_mount.png"></li>
-</ul>
-</li>
-<li>Open the DCIM directory, and you will find all your photos segrageted into folders</li>
-<li>Once you copy them to your ubuntu machine, unmount the Iphone<ul>
-<li>command to unmount</li>
-<li><code>fusermount -u ~/iphone</code></li>
+</ol>
+<p>Returning an csv file through Streaming Response
+1. Writing data to an csv stream from dataframe
+    - 
+    <code>from io import StringIO
+    stream = StringIO()
+    df.to_csv(stream, index=False)</code></p>
+<ol>
+<li>Return a Streaming Response Object from FastAPI responses module<ul>
+<li><code>from fastapi.responses import StreamingResponse
+response = StreamingResponse(
+iter([stream.getvalue()]), 
+media_type="text/csv",
+headers={
+    'Content-Disposition': 'attachment;filename=sample_filename.csv',
+    'Access-Control-Expose-Headers': 'Content-Disposition' # this is optional
+})
+return response</code></li>
 </ul>
 </li>
 </ol>
@@ -103,19 +123,6 @@
     <!-- Next and prev article -->
     <div class="related mx-auto">
 
-          <h4>Releted</h4>      
-          <ul style="list-style-type:none;">
-                <li>
-                    <a href="https://cvarma.com/blogs/2022/python-tricks-for-developer.html">
-                        Python Tricks useful in day to day job of a developer
-                    </a>
-                </li>
-                <li>
-                    <a href="https://cvarma.com/blogs/2022/frequently-used-postgres-commands.html">
-                        Frequently used Postgres commands
-                    </a>
-                </li>
-            </ul>
 
         <div class="popular-tags">
           <h4>Popular Tags</h4>
