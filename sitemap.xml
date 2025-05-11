@@ -5,35 +5,42 @@ xmlns="http://www.sitemaps.org/schemas/sitemap/0.9">
 
 <url>
 <loc>https://cvarma.com/</loc>
-<lastmod>2023-02-05T19:03:14-00:00</lastmod>
+<lastmod>2025-05-11T18:51:12-00:00</lastmod>
 <changefreq>daily</changefreq>
 <priority>1.0</priority>
 </url>
 
 <url>
 <loc>https://cvarma.com/blogs/tags.html</loc>
-<lastmod>2023-02-05T19:03:14-00:00</lastmod>
+<lastmod>2025-05-11T18:51:12-00:00</lastmod>
 <changefreq>daily</changefreq>
 <priority>1.0</priority>
 </url>
 
 <url>
 <loc>https://cvarma.com/blogs/categories.html</loc>
-<lastmod>2023-02-05T19:03:14-00:00</lastmod>
+<lastmod>2025-05-11T18:51:12-00:00</lastmod>
 <changefreq>daily</changefreq>
 <priority>1.0</priority>
 </url>
 
 <url>
 <loc>https://cvarma.com/blogs/authors.html</loc>
-<lastmod>2023-02-05T19:03:14-00:00</lastmod>
+<lastmod>2025-05-11T18:51:12-00:00</lastmod>
 <changefreq>daily</changefreq>
 <priority>1.0</priority>
 </url>
 
 <url>
 <loc>https://cvarma.com/blogs/archives.html</loc>
-<lastmod>2023-02-05T19:03:14-00:00</lastmod>
+<lastmod>2025-05-11T18:51:12-00:00</lastmod>
+<changefreq>daily</changefreq>
+<priority>1.0</priority>
+</url>
+
+<url>
+<loc>https://cvarma.com/blogs/2025/day-to-day-docker-commands.html</loc>
+<lastmod>2023-05-11T16:25:00+05:30</lastmod>
 <changefreq>daily</changefreq>
 <priority>1.0</priority>
 </url>
@@ -95,6 +102,27 @@ xmlns="http://www.sitemaps.org/schemas/sitemap/0.9">
 </url>
 
 <url>
+<loc>https://cvarma.com/blogs/category/2025.html</loc>
+<lastmod>2025-05-11T16:25:00+05:53</lastmod>
+<changefreq>daily</changefreq>
+<priority>1.0</priority>
+</url>
+
+<url>
+<loc>https://cvarma.com/blogs/tag/docker.html</loc>
+<lastmod>2025-05-11T16:25:00+05:53</lastmod>
+<changefreq>daily</changefreq>
+<priority>1.0</priority>
+</url>
+
+<url>
+<loc>https://cvarma.com/blogs/tag/containers.html</loc>
+<lastmod>2025-05-11T16:25:00+05:53</lastmod>
+<changefreq>daily</changefreq>
+<priority>1.0</priority>
+</url>
+
+<url>
 <loc>https://cvarma.com/blogs/tag/fastapi.html</loc>
 <lastmod>2023-05-02T20:25:00+05:53</lastmod>
 <changefreq>daily</changefreq>
@@ -138,7 +166,7 @@ xmlns="http://www.sitemaps.org/schemas/sitemap/0.9">
 
 <url>
 <loc>https://cvarma.com/blogs/author/chaitanya-varma.html</loc>
-<lastmod>2023-05-02T20:25:00+05:53</lastmod>
+<lastmod>2025-05-11T16:25:00+05:53</lastmod>
 <changefreq>daily</changefreq>
 <priority>1.0</priority>
 </url>

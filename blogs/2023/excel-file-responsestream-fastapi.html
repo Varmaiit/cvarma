@@ -48,72 +48,73 @@
    <div class="py-5">
 
   
-<div class="container">
+<div class="container mt-4">
 
   <div class="row">
-    <div class="col-lg-8 mr-auto">   
 
-  <h2 class="mt-4 mb-3">Return Excel/CSV File as a Response Stream FastAPI</h2>
-  
-  <div class="text-muted mb-2">
-    <time datetime="2023-05-02 20:25:00+05:30">
-      02 May 2023
-    </time>
-    
-     <span class="tags">Tags : </span>
-       <a href="https://cvarma.com/blogs/tag/fastapi.html">FastAPI</a>
-/       <a href="https://cvarma.com/blogs/tag/pandas.html">Pandas</a>
-  </div>
-  
+    <!-- Article content  -->
+    <div class="col-lg-8">   
 
-  <br>
-  <br>
-  
-  <p>Code base to return excel/csv file using Streaming Response in FastAPI</p>
+          <h2 class="mt-4 mb-3">Return Excel/CSV File as a Response Stream FastAPI</h2>
+          
+          <div class="text-muted mb-2">
+            <time datetime="2023-05-02 20:25:00+05:30">
+              02 May 2023
+            </time>
+            
+            <span class="tags">Tags : </span>
+              <a href="https://cvarma.com/blogs/tag/fastapi.html">FastAPI</a>
+/              <a href="https://cvarma.com/blogs/tag/pandas.html">Pandas</a>
+          </div>
+          
+
+          <br>
+          <br>
+          
+          <p>Code base to return excel/csv file using Streaming Response in FastAPI</p>
 <p>Returning an excel file through Streaming Response</p>
 <ol>
 <li>
 <p>Writing data to an excel stream from dataframe</p>
-<p><code>from io import BytesIO</code> </p>
-<p><code>stream = BytesIO()</code><br/>
-<code>df.to_excel(stream, index=False, engine="openpyxl") # Note: need to install openpyxl</code></p>
+<ul>
+<li><code>from io import BytesIO
+stream = BytesIO()
+df.to_excel(stream, index=False, engine="openpyxl") # Note: need to install openpyxl</code></li>
+</ul>
 </li>
 <li>
 <p>Return a Streaming Response Object from FastAPI responses module</p>
-<p>```<br>
-from fastapi.responses import StreamingResponse</p>
-<p>response = StreamingResponse(
-        iter([stream.getvalue()]), 
-        media_type="application/vnd.openxmlformats-officedocument.spreadsheetml.sheet",
-        headers = {
-        'Content-Disposition': 'attachment;filename=sample_filename.xlsx',<br/>
-        'Access-Control-Expose-Headers': 'Content-Disposition' #this is optional<br/> 
-})  <br>
-return response <br>
-```</p>
+<ul>
+<li><code>from fastapi.responses import StreamingResponse
+response = StreamingResponse(
+iter([stream.getvalue()]), 
+media_type="application/vnd.openxmlformats-officedocument.spreadsheetml.sheet",
+headers={
+    'Content-Disposition': 'attachment;filename=sample_filename.xlsx',
+    'Access-Control-Expose-Headers': 'Content-Disposition' #this is optional
+})
+return response</code></li>
+</ul>
 </li>
 </ol>
-<p>Returning an csv file through Streaming Response</p>
+<p>Returning an csv file through Streaming Response
+1. Writing data to an csv stream from dataframe
+    - 
+    <code>from io import StringIO
+    stream = StringIO()
+    df.to_csv(stream, index=False)</code></p>
 <ol>
-<li>
-<p>Writing data to an csv stream from dataframe</p>
-<p><code>from io import StringIO</code> </p>
-<p><code>stream = StringIO()</code><br/>
-<code>df.to_csv(stream, index=False)</code></p>
-</li>
-<li>
-<p>Return a Streaming Response Object from FastAPI responses module</p>
-<p>```<br>
-from fastapi.responses import StreamingResponse</p>
-<p>response = StreamingResponse( <br>
-    iter([stream.getvalue()]), 
-    media_type="text/csv", <br>
-    headers={ <br>
-        'Content-Disposition': 'attachment;filename=sample_filename.csv', 
-        'Access-Control-Expose-Headers': 'Content-Disposition' # this is optional <br>
-    }) <br>
-return response
-```   </p>
+<li>Return a Streaming Response Object from FastAPI responses module<ul>
+<li><code>from fastapi.responses import StreamingResponse
+response = StreamingResponse(
+iter([stream.getvalue()]), 
+media_type="text/csv",
+headers={
+    'Content-Disposition': 'attachment;filename=sample_filename.csv',
+    'Access-Control-Expose-Headers': 'Content-Disposition' # this is optional
+})
+return response</code></li>
+</ul>
 </li>
 </ol>
 
@@ -121,31 +122,41 @@ return response
 
 
 
-    <!-- Next and prev article -->
-    <div class="related mx-auto">
+    <!-- Related & Popular tags -->
+    <div class="col-lg-4 pt-lg-5 pt-2">
 
 
         <div class="popular-tags">
           <h4>Popular Tags</h4>
           <ul class="tagcloud" style="list-style-type:none;">
-                <li class="tag-1">
-                    <a href="https://cvarma.com/blogs/tag/postgres.html">
-                    Postgres
-                    </a>
-                </li>
                 <li class="tag-4">
                     <a href="https://cvarma.com/blogs/tag/python.html">
                     Python
                     </a>
                 </li>
                 <li class="tag-4">
-                    <a href="https://cvarma.com/blogs/tag/ubuntu.html">
-                    Ubuntu
+                    <a href="https://cvarma.com/blogs/tag/pandas.html">
+                    Pandas
+                    </a>
+                </li>
+                <li class="tag-1">
+                    <a href="https://cvarma.com/blogs/tag/postgres.html">
+                    Postgres
                     </a>
                 </li>
                 <li class="tag-4">
-                    <a href="https://cvarma.com/blogs/tag/pandas.html">
-                    Pandas
+                    <a href="https://cvarma.com/blogs/tag/containers.html">
+                    Containers
+                    </a>
+                </li>
+                <li class="tag-4">
+                    <a href="https://cvarma.com/blogs/tag/docker.html">
+                    Docker
+                    </a>
+                </li>
+                <li class="tag-4">
+                    <a href="https://cvarma.com/blogs/tag/iphone.html">
+                    Iphone
                     </a>
                 </li>
                 <li class="tag-4">
@@ -154,8 +165,8 @@ return response
                     </a>
                 </li>
                 <li class="tag-4">
-                    <a href="https://cvarma.com/blogs/tag/iphone.html">
-                    Iphone
+                    <a href="https://cvarma.com/blogs/tag/ubuntu.html">
+                    Ubuntu
                     </a>
                 </li>
           </ul>
@@ -200,7 +211,7 @@ return response
       </div>
 
       </div>
-    <p class=align-text-bottom>Copy rights © 2019-2023 All Rights reserved</p>
+    <p class=align-text-bottom>Copy rights © 2019-2025 All Rights Reserved</p>
     </div>
     </footer>
     <!-- Optional JavaScript -->

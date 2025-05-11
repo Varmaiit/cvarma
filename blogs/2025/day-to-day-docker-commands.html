@@ -8,10 +8,10 @@
     <link rel="stylesheet" href="https://cvarma.com/theme/css/font-awesome.min.css">
     <link rel="stylesheet" href="https://cvarma.com/theme/css/styleblog.css">
     <meta name="author" content="Chaitanya Varma" />
-    <meta name="keywords" content="Python" />
-    <meta name="description" content="Some useful python tips and tricks which will save the day of Software developer, Like running a long running script in the background, but still monitoring its progress in realtime." />
+    <meta name="keywords" content="Docker,Containers" />
+    <meta name="description" content="Frequently used docker commands for local development, like build, create, start, and etc.." />
 
-    <title>Python Tricks useful in day to day job of a developer - Chaitanya Varma's Blog</title>
+    <title>Day to day used Docker commands - Chaitanya Varma's Blog</title>
   </head>
   <body>
     <!-- navbar -->
@@ -55,35 +55,79 @@
     <!-- Article content  -->
     <div class="col-lg-8">   
 
-          <h2 class="mt-4 mb-3">Python Tricks useful in day to day job of a developer</h2>
+          <h2 class="mt-4 mb-3">Day to day used Docker commands</h2>
           
           <div class="text-muted mb-2">
-            <time datetime="2022-06-23 08:25:00+05:30">
-              23 Jun 2022
+            <time datetime="2025-05-11 16:25:00+05:30">
+              11 May 2025
             </time>
             
             <span class="tags">Tags : </span>
-              <a href="https://cvarma.com/blogs/tag/python.html">Python</a>
+              <a href="https://cvarma.com/blogs/tag/docker.html">Docker</a>
+/              <a href="https://cvarma.com/blogs/tag/containers.html">Containers</a>
           </div>
           
 
           <br>
           <br>
           
-          <p>Let's start with a First Tip</p>
+          <p>Frequently used docker commands for local developement, like build, create, start and restart</p>
+<p>Day to day docker commands</p>
 <ol>
 <li>
-<p>Running a long running script in the background, but still tracking its progress in realtime.</p>
+<p>Building an image using Docker.</p>
 <ul>
 <li>
-<p>Setting up to run the script in the background using nohup and logging the output into a output file.<br />
-<code>nohup python3 -u sample_script.py &gt; script_output.log &amp;</code></p>
+<p><code>docker compose build &lt;service_name&gt;</code> <br /> 
+Eg: <code>docker compose build django_cvarma</code>
+Note: One may use <code>docker-compose</code> instead of <code>docker compose</code> for legacy versions of docker</p>
 </li>
 <li>
-<p>Monitoring the output in the realtime using tail.<br />
-<code>tail -f script_output.log</code></p>
+<p><code>docker compose build &lt;service_name&gt; --pull --no-cache</code> <br /> 
+Eg: <code>docker compose build django_cvarma --pull --no-cache</code></p>
 </li>
+<li><code>--pull</code>: tells to pull the latest version of base images</li>
+<li><code>--no-cache</code>: forces to run all steps without using cache layer <br /></li>
 </ul>
+<p>One may just skip service_name to build all services in <code>docker-compose.yaml</code></p>
+</li>
+<li>
+<p>List Docker images / containers.</p>
+<ul>
+<li><code>docker images</code> # List all docker images <br/></li>
+<li><code>docker ps</code> / <code>docker compose ps</code> # List all containers</li>
+</ul>
+</li>
+<li>
+<p>Create and start containers.</p>
+<ul>
+<li><code>docker compose up &lt;service_name&gt; -d</code> <br />
+Eg:<code>docker compose up django_cvarma -d</code></li>
+<li><code>-d</code>: helps to run in background.</li>
+</ul>
+<p>Pro tip to create, start all containers in the background and to follow the logs <br>
+- <code>docker compose up -d; docker-compose logs -f</code></p>
+</li>
+<li>
+<p>Commands to start, stop and restart the stopped containers.</p>
+<ul>
+<li><code>docker compose start</code></li>
+<li><code>docker compose stop</code></li>
+<li><code>docker compose restart</code></li>
+</ul>
+<p>One may choose to start or restart the container with specific service also <br />
+Eg: <code>docker compose restart django_cvarma</code></p>
+</li>
+<li>
+<p>Down the containers and remove all services, networks defined in docker-compose.yaml</p>
+<ul>
+<li><code>docker compose down</code></li>
+<li><code>docker compose down -v</code> # removes the volumes as well, so it will delete all the data stored,
+especially like the data stored in the DB wil be lost and files that are uploaded.</li>
+</ul>
+<p>Alternatively one can choose to stop and remove specific service <br />
+<code>docker compose stop django_cvarma</code> <br />
+<code>docker compose rm -f django_cvarma</code> # <code>-f</code> force removes without a confirmation prompt</p>
 </li>
 </ol>
 
@@ -94,14 +138,6 @@
     <!-- Related & Popular tags -->
     <div class="col-lg-4 pt-lg-5 pt-2">
 
-          <h4 class="pt-2">Releted</h4>      
-          <ul style="list-style-type:none;">
-                <li>
-                    <a href="https://cvarma.com/blogs/2022/photos-backup-iphone-ubuntu.html">
-                        Best way to backup photos from Iphone to Ubuntu
-                    </a>
-                </li>
-            </ul>
 
         <div class="popular-tags">
           <h4>Popular Tags</h4>

@@ -48,27 +48,29 @@
    <div class="py-5">
 
   
-<div class="container">
+<div class="container mt-4">
 
   <div class="row">
-    <div class="col-lg-8 mr-auto">   
 
-  <h2 class="mt-4 mb-3">Frequently used Postgres commands</h2>
-  
-  <div class="text-muted mb-2">
-    <time datetime="2022-11-13 20:25:00+05:30">
-      13 Nov 2022
-    </time>
-    
-     <span class="tags">Tags : </span>
-       <a href="https://cvarma.com/blogs/tag/postgres.html">Postgres</a>
-  </div>
-  
+    <!-- Article content  -->
+    <div class="col-lg-8">   
 
-  <br>
-  <br>
-  
-  <p>Some of the common postgres related commands</p>
+          <h2 class="mt-4 mb-3">Frequently used Postgres commands</h2>
+          
+          <div class="text-muted mb-2">
+            <time datetime="2022-11-13 20:25:00+05:30">
+              13 Nov 2022
+            </time>
+            
+            <span class="tags">Tags : </span>
+              <a href="https://cvarma.com/blogs/tag/postgres.html">Postgres</a>
+          </div>
+          
+
+          <br>
+          <br>
+          
+          <p>Some of the common postgres related commands</p>
 <ol>
 <li>
 <p>Logging into local Postgres server</p>
@@ -97,6 +99,11 @@ Eg: <code>drop database test_db;</code></li>
 <li><code>pg_dump --no-owner -h &lt;host_ip/endpoint&gt; -p &lt;port&gt; -U &lt;username&gt; &lt;db_name&gt; &gt; &lt;file_path&gt;</code><br />
 Eg: <code>pg_dump --no-owner -h 00.00.00.00 -p 5432 -U postgres uat_db &gt; test_dump.sql</code></li>
 </ul>
+<p>Alternate commands for the same purpose using DB Url <br />
+- <code>pg_dump -Fp -O $DB_URL &gt; &lt;file_path&gt;</code> <br />
+  - <code>-Fp</code>: F stands for format and p means plain sql <br />
+  - <code>-O</code>: This indicates not to output owner information. <br />
+Eg: <code>pg_dump -Fp -O $DB_URL &gt; uat_db.sql</code></p>
 </li>
 <li>
 <p>Restoring the dump to an existing new database in local.</p>
@@ -104,6 +111,10 @@ Eg: <code>pg_dump --no-owner -h 00.00.00.00 -p 5432 -U postgres uat_db &gt; test
 <li><code>sudo psql -U &lt;username&gt; -d &lt;db_name&gt; &lt; &lt;file_path&gt;</code><br />
 Eg: <code>sudo psql -U postgres -d &lt;test_db&gt; &lt; test_dump.sql</code></li>
 </ul>
+<p>Alternate commands for the same purpose using DB Url <br />
+- <code>psql -f &lt;file_path&gt; $DB_URL</code> <br />
+  - <code>-f</code>: Tells to execute commands in the file on the DB connected via DB_URL <br />
+Eg: <code>psql -f uat_db.sql $DB_URL</code></p>
 </li>
 </ol>
 
@@ -111,10 +122,10 @@ Eg: <code>sudo psql -U postgres -d &lt;test_db&gt; &lt; test_dump.sql</code></li
 
 
 
-    <!-- Next and prev article -->
-    <div class="related mx-auto">
+    <!-- Related & Popular tags -->
+    <div class="col-lg-4 pt-lg-5 pt-2">
 
-          <h4>Releted</h4>      
+          <h4 class="pt-2">Releted</h4>      
           <ul style="list-style-type:none;">
                 <li>
                     <a href="https://cvarma.com/blogs/2022/photos-backup-iphone-ubuntu.html">
@@ -126,24 +137,34 @@ Eg: <code>sudo psql -U postgres -d &lt;test_db&gt; &lt; test_dump.sql</code></li
         <div class="popular-tags">
           <h4>Popular Tags</h4>
           <ul class="tagcloud" style="list-style-type:none;">
-                <li class="tag-1">
-                    <a href="https://cvarma.com/blogs/tag/postgres.html">
-                    Postgres
-                    </a>
-                </li>
                 <li class="tag-4">
                     <a href="https://cvarma.com/blogs/tag/python.html">
                     Python
                     </a>
                 </li>
                 <li class="tag-4">
-                    <a href="https://cvarma.com/blogs/tag/ubuntu.html">
-                    Ubuntu
+                    <a href="https://cvarma.com/blogs/tag/pandas.html">
+                    Pandas
+                    </a>
+                </li>
+                <li class="tag-1">
+                    <a href="https://cvarma.com/blogs/tag/postgres.html">
+                    Postgres
                     </a>
                 </li>
                 <li class="tag-4">
-                    <a href="https://cvarma.com/blogs/tag/pandas.html">
-                    Pandas
+                    <a href="https://cvarma.com/blogs/tag/containers.html">
+                    Containers
+                    </a>
+                </li>
+                <li class="tag-4">
+                    <a href="https://cvarma.com/blogs/tag/docker.html">
+                    Docker
+                    </a>
+                </li>
+                <li class="tag-4">
+                    <a href="https://cvarma.com/blogs/tag/iphone.html">
+                    Iphone
                     </a>
                 </li>
                 <li class="tag-4">
@@ -152,8 +173,8 @@ Eg: <code>sudo psql -U postgres -d &lt;test_db&gt; &lt; test_dump.sql</code></li
                     </a>
                 </li>
                 <li class="tag-4">
-                    <a href="https://cvarma.com/blogs/tag/iphone.html">
-                    Iphone
+                    <a href="https://cvarma.com/blogs/tag/ubuntu.html">
+                    Ubuntu
                     </a>
                 </li>
           </ul>
@@ -198,7 +219,7 @@ Eg: <code>sudo psql -U postgres -d &lt;test_db&gt; &lt; test_dump.sql</code></li
       </div>
 
       </div>
-    <p class=align-text-bottom>Copy rights © 2019-2023 All Rights reserved</p>
+    <p class=align-text-bottom>Copy rights © 2019-2025 All Rights Reserved</p>
     </div>
     </footer>
     <!-- Optional JavaScript -->
